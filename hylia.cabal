@@ -1,0 +1,31 @@
+cabal-version:       2.2
+
+name:                hylia
+version:             0.1.0.0
+-- synopsis:
+-- description:
+license:             MIT
+license-file:        LICENSE
+author:              alex
+maintainer:          alex@slab.org
+-- copyright:
+category:            Network
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+
+library
+  exposed-modules:   Network.Hylia
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >=4.12 && <4.13
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  cxx-sources: Hylia/hylia.cpp
+  include-dirs:
+    Hylia
+    Hylia/link
+  extra-libraries:
+      stdc++
+  cxx-options:
+    -Wall -Wextra -pipe -MD -MP -fPIC -DPIC -DNDEBUG -O3 -ffast-math -mtune=generic -msse -msse2 -mfpmath=sse -fdata-sections -ffunction-sections -fvisibility=hidden -std=gnu++11 -fvisibility-inlines-hidden  -Wno-missing-field-initializers -Wno-multichar -Wno-uninitialized -Wno-unknown-pragmas -DLINK_PLATFORM_LINUX=1
+
