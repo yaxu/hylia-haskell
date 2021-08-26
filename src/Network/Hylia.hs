@@ -84,3 +84,6 @@ foreign import ccall unsafe "hylia.h hylia_stop_playing"
 foreign import ccall unsafe "hylia.h hylia_cleanup"
   hylia_cleanup :: Ptr Hylia -> IO ()
 
+foreign import ccall unsafe "hylia.h hylia_beat_time"
+  hylia_beat_time :: Ptr Hylia -> CDouble -> IO (CDouble)
+
